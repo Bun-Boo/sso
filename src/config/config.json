@@ -1,0 +1,30 @@
+{
+  "development": {
+    "username": "root",
+    "password": "root",
+    "database": "sso",
+    "host": "127.0.0.1",
+    "port": "3306",
+    "dialect": "mysql",
+    "logging": false,
+    "define": {
+      "freezeTableName": true
+    }
+  },
+  "test": {
+    "username": "root",
+    "password": "root",
+    "database": "sso",
+    "host": "127.0.0.1",
+    "port": "3307",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "root",
+    "password": "root",
+    "database": "sso",
+    "host": "127.0.0.1",
+    "port": "3307",
+    "dialect": "mysql"
+  }
+}
