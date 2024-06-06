@@ -1,7 +1,8 @@
 import express from "express";
 import homeController from '../controller/homeController';
+import loginController from '../controller/loginController';
 import apiController from '../controller/apiController';
-
+import passport from 'passport';
 const router = express.Router();
 
 /**
@@ -17,6 +18,15 @@ const initWebRoutes = (app) => {
     router.post("/delete-user/:id", homeController.handleDelteUser)
     router.get("/update-user/:id", homeController.getUpdateUserPage);
     router.post("/user/update-user", homeController.handleUpdateUser);
+
+    //login
+    router.get("/login", loginController.getLoginPage);
+
+    router.post('/login', passport.authenticate('local', {
+        successRedirect: '/',
+        failureRedirect: '/login'
+      }));
+
 
     //rest api
     //GET - R, POST- C, PUT - U, DELETE - D
